@@ -1,0 +1,176 @@
+## Operator Functions ##
+`%notin%` <- function(x,y) !(x %in% y)
+`%+%` <- function(x,y) paste(x,y,sep="")
+
+#' The length of a string (in characters).
+#'
+#' @param None
+#' @return NULL
+#' @export
+#' @examples
+#' ... some code
+#' readkey()
+readkey <- function()
+{
+    cat ("Press [enter] to continue", fill=TRUE)
+    line <- readline()
+}
+
+## returnPart
+returnPart <- function(x, y){
+	eval(parse(text=sprintf("x$%s", y)))
+}
+
+## Generation of Indentation by Level
+indent <- function(n){
+	return(paste(rep("\t", n), collapse=''))
+}
+
+## ADD LEADING ZEROES to X Digits ##
+leadgr <- function(x, digits=1){
+	formatter <- paste0("%0", digits, 'd')
+	return(sprintf(formatter, x))
+}
+
+trimall <- function(tstring){
+	return(gsub("(^ +)|( +$)", "", tstring))
+}
+
+increment <- function(x)
+{
+	eval.parent(substitute(x <- x + 1))
+}
+
+up <- function(x){
+	eval.parent(substitute(x <- x + 1))
+}
+down <- function(x){
+	eval.parent(substitute(x <- x - 1))
+}
+
+## PLOT MULTIPLE DISTRIBUTIONS
+plot.multi.dens <- function(s, toplb="")
+{
+	junk.x = NULL
+	junk.y = NULL
+	for(i in 1:length(s))
+	{
+		junk.x = c(junk.x, density(s[[i]],na.rm=TRUE)$x)
+		junk.y = c(junk.y, density(s[[i]],na.rm=TRUE)$y)
+	}
+	xr <- range(junk.x)
+	yr <- range(junk.y)
+	plot(density(s[[1]],na.rm=TRUE), xlim = xr, ylim = yr, main = toplb)
+	for(i in 1:length(s))
+	{
+		lines(density(s[[i]], na.rm=TRUE), xlim = xr, ylim = yr, col = i)
+	}
+}
+
+## FINDS INTEGER MODE OF A STRING SET
+mhack <- function(x){
+	temp <- table(as.vector(x))
+	if(length(subset(x, is.na(x)))/length(x)>.5){
+		return(NA)
+	} else{
+		return(as.integer(names(temp)[temp == max(temp)]))
+	}
+}
+
+## FINDS STRING MODE OF A STRING SET
+mhack2 <- function(x){
+	temp <- table(as.vector(x))
+	if(length(x[is.na(x)])>500){
+		return(NA)
+	} else{
+		return(names(temp)[temp == max(temp)])
+	}
+}
+
+## Exporting Stuff to JSON
+checkna <- function(x){
+	if(is.na(x)){
+		return('null')
+	}
+	return(as.character(x))
+}
+
+checkna_str <- function(x){
+	if(is.na(x)| length(x) ==0){
+		return('null')
+	}
+	return('"' %+% x %+%'"')
+}
+
+sampdf <- function(x,y) {
+	x[sample(1:nrow(x),y),]
+}
+
+make_null <- function(x){
+	if(length(x) == 0) {x <- 'null'}
+	else if (is.na(x) | is.null(x)){x <- 'null'}
+	else return(x)
+}
+
+
+## Dollars
+pNum <- function(x){
+	return(prettyNum(x, big.mark=',', preserve.width='individual'))
+}
+
+## Add Auto line breaks to long strings.
+add_breaks <- function(x, n=17){
+  if(nchar(x) < n){
+		return(x)
+	}
+
+	i <- n-1
+	while(i > 5){
+		if(substr(x, i, i) == " "){
+			substr(x,i,i) <- "\n"
+
+			if(nchar(x) - i > n + 2){
+				return(paste0(substr(x, 1,i),add_breaks(substr(x, i+1, nchar(x)),n)))
+			}
+			return(x)
+		}
+		down(i)
+	}
+	return(x)
+}
+
+
+## formatting
+fix_edates <- function(dat, dcols){
+    for(i in dcols){
+        dat[,i] <- as.Date(dat[,i], format="%m/%d/%Y")
+    }
+    return(dat)
+}
+
+fix_names <- function(x){
+    x <- tolower(x)
+    x <- gsub("\\."," ",x)
+
+    return(x)
+}
+
+ceiling100 <- function(x){
+	ceiling(max(x)/100)*100
+}
+
+### Requires Stuff ###
+
+cleanNames <- function(x){
+	require(magrittr)
+	names(x) <- names(x) %>%
+		iconv("UTF-8", "UTF-8", sub="") %>%
+		gsub(pattern="\\.", replacement=" ") %>%
+		trimall() %>%
+		gsub(pattern=" +", replacement="_") %>%
+		tolower()
+	return(x)
+}
+
+
+## DO NOT USE ##
