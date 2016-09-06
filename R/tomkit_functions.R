@@ -3,7 +3,7 @@
 `%+%` <- function(x,y) paste(x,y,sep="")
 
 
-#' The length of a string (in characters).
+#' Adds interactive pause to code.  Waits for user input.
 #'
 #' @return None
 #'

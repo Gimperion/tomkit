@@ -2,7 +2,7 @@
 % Please edit documentation in R/tomkit_functions.R
 \name{readkey}
 \alias{readkey}
-\title{The length of a string (in characters).}
+\title{Adds interactive pause to code.  Waits for user input.}
 \usage{
 readkey()
 }
@@ -10,7 +10,7 @@ readkey()
 None
 }
 \description{
-The length of a string (in characters).
+Adds interactive pause to code.  Waits for user input.
 }
 \examples{
 ... some code
