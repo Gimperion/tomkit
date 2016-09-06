@@ -2,14 +2,16 @@
 `%notin%` <- function(x,y) !(x %in% y)
 `%+%` <- function(x,y) paste(x,y,sep="")
 
+
 #' The length of a string (in characters).
 #'
-#' @param None
-#' @return NULL
-#' @export
+#' @return None
+#'
 #' @examples
 #' ... some code
 #' readkey()
+#'
+#' @export
 readkey <- function()
 {
     cat ("Press [enter] to continue", fill=TRUE)
@@ -21,7 +23,19 @@ returnPart <- function(x, y){
 	eval(parse(text=sprintf("x$%s", y)))
 }
 
-## Generation of Indentation by Level
+#' shortened version of prettyNum with diff defaults
+#'
+#' @return String
+#'
+#' @examples
+#' pNum(5000000)
+#'
+#' @export
+pNum <- function(x){
+	return(prettyNum(x, big.mark=',', preserve.width='individual'))
+}
+
+
 indent <- function(n){
 	return(paste(rep("\t", n), collapse=''))
 }
@@ -113,11 +127,6 @@ make_null <- function(x){
 }
 
 
-## Dollars
-pNum <- function(x){
-	return(prettyNum(x, big.mark=',', preserve.width='individual'))
-}
-
 ## Add Auto line breaks to long strings.
 add_breaks <- function(x, n=17){
   if(nchar(x) < n){
@@ -159,7 +168,7 @@ ceiling100 <- function(x){
 	ceiling(max(x)/100)*100
 }
 
-### Requires Stuff ###
+
 
 cleanNames <- function(x){
 	require(magrittr)
@@ -171,6 +180,3 @@ cleanNames <- function(x){
 		tolower()
 	return(x)
 }
-
-
-## DO NOT USE ##
