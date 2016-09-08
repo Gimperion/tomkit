@@ -18,7 +18,26 @@ readkey <- function()
     line <- readline()
 }
 
-## returnPart
+#' Cleans up names of imported data frames
+#'
+#' @return data.frame
+#'
+#' @examples
+#' cleanNames(data)
+#'
+#' @export
+cleanNames <- function(x){
+	require(magrittr)
+	names(x) <- names(x) %>%
+		iconv("UTF-8", "UTF-8", sub="") %>%
+		gsub(pattern="\\.", replacement=" ") %>%
+		trimall() %>%
+		gsub(pattern=" +", replacement="_") %>%
+		tolower()
+	return(x)
+}
+
+
 returnPart <- function(x, y){
 	eval(parse(text=sprintf("x$%s", y)))
 }
@@ -166,17 +185,4 @@ fix_names <- function(x){
 
 ceiling100 <- function(x){
 	ceiling(max(x)/100)*100
-}
-
-
-
-cleanNames <- function(x){
-	require(magrittr)
-	names(x) <- names(x) %>%
-		iconv("UTF-8", "UTF-8", sub="") %>%
-		gsub(pattern="\\.", replacement=" ") %>%
-		trimall() %>%
-		gsub(pattern=" +", replacement="_") %>%
-		tolower()
-	return(x)
 }
