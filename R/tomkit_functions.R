@@ -1,5 +1,24 @@
-## Operator Functions ##
+
+#' Opposite of %in%
+#'
+#' @return Boolean
+#'
+#' @examples
+#' "test" %notin% c("bar", "foo")
+#'
+#' @export
 `%notin%` <- function(x,y) !(x %in% y)
+
+
+
+#' pastes two strings together
+#'
+#' @return String
+#'
+#' @examples
+#' "foo" %+% "bar"
+#'
+#' @export
 `%+%` <- function(x,y) paste(x,y,sep="")
 
 
