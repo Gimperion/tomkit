@@ -2,7 +2,7 @@
 % Please edit documentation in R/tomkit_functions.R
 \name{\%+\%}
 \alias{\%+\%}
-\title{pastes two strings together}
+\title{Pastes two strings together}
 \usage{
 x \%+\% y
 }
@@ -10,7 +10,7 @@ x \%+\% y
 String
 }
 \description{
-pastes two strings together
+Pastes two strings together
 }
 \examples{
 "foo" \%+\% "bar"

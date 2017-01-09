@@ -10,8 +10,7 @@
 `%notin%` <- function(x,y) !(x %in% y)
 
 
-
-#' pastes two strings together
+#' Pastes two strings together
 #'
 #' @return String
 #'
@@ -123,8 +122,7 @@ trimall <- function(tstring){
 #' @return Vector
 #'
 #' @examples
-#' c("a","b", "x", "x", "a") %>%
-#' 	ifel_repl(. == "x", "replaced!")
+#' c("a","b", "x", "x", "a") %>% ifel_repl(. == "x", "replaced!")
 #'
 #' @export
 ifel_repl <- function(data, boolean, replacement){

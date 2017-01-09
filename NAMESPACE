@@ -3,6 +3,7 @@
 export("%+%")
 export("%notin%")
 export(cleanNames)
+export(ifel_repl)
 export(indent)
 export(leadgr)
 export(pNum)

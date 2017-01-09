@@ -3,8 +3,9 @@ Title: Helper functions
 Version: 0.0.0.9000
 Authors@R: person("Tommy", "Shen", email = "gimperion@gmail.com", role = c("aut", "cre"))
 Description: Stuff
-Depends: R (>= 3.2.4)
+Depends:
+    R (>= 3.2.4)
 License: CC BY
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 5.0.1.9000
+RoxygenNote: 5.0.1
