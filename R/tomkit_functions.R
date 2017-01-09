@@ -117,6 +117,21 @@ trimall <- function(tstring){
 	return(gsub("(^ +)|( +$)", "", tstring))
 }
 
+#' Replaces values based on if/else boolean logic.
+#' supports piping a la dplyr
+#'
+#' @return Vector
+#'
+#' @examples
+#' c("a","b", "x", "x", "a") %>%
+#' 	ifel_repl(. == "x", "replaced!")
+#'
+#' @export
+ifel_repl <- function(data, boolean, replacement){
+	ifelse(boolean, replacement, data)
+}
+
+
 # deprecated
 # increment <- function(x)
 # {
