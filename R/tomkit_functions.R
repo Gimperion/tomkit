@@ -130,6 +130,20 @@ ifel_repl <- function(data, boolean, replacement){
 }
 
 
+#' Creates a mapping vector based on data.frame columns
+#' supports piping a la dplyr
+#'
+#' @return Vector
+#'
+#'
+#' @export
+createMap <- function(dat, base, name){
+    dat[,base] %>%
+        c() %>%
+        setNames(dat[,name])
+}
+
+
 # deprecated
 # increment <- function(x)
 # {

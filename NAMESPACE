@@ -3,6 +3,7 @@
 export("%+%")
 export("%notin%")
 export(cleanNames)
+export(createMap)
 export(ifel_repl)
 export(indent)
 export(leadgr)

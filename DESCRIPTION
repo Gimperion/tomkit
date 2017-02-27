@@ -1,6 +1,6 @@
 Package: tomkit
 Title: Helper functions
-Version: 0.0.0.9000
+Version: 0.0.1.0000
 Authors@R: person("Tommy", "Shen", email = "gimperion@gmail.com", role = c("aut", "cre"))
 Description: Stuff
 Depends:
