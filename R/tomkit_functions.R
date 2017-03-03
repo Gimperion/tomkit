@@ -64,7 +64,7 @@ cleanNames <- function(x){
 #'
 #' @export
 returnPart <- function(x, y){
-	eval(parse(text=sprintf("x$%s", y)))
+	eval(parse(text=sprintf("x$`%s`", y)))
 }
 
 #' shortened version of prettyNum with diff defaults
