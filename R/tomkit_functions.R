@@ -143,6 +143,19 @@ createMap <- function(dat, base, name){
         setNames(dat[,name])
 }
 
+#' Prints something then passes object along
+#' Text marker for long piped processes
+#'
+#' @return Anything
+#'
+#'
+#' @export
+pipeMarker <- function(dat, text){
+    cat(text, fill=TRUE)
+    return(dat)
+}
+
+
 
 # deprecated
 # increment <- function(x)
