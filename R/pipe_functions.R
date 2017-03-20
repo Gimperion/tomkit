@@ -53,7 +53,7 @@ ifel_repl <- function(x, boolean, replacement){
 #'
 #' @export
 createMap <- function(x, base, name){
-    dat[,base] %>%
+    x[,base] %>%
         c() %>%
         setNames(x[,name])
 }
