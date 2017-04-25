@@ -5,7 +5,7 @@
 \title{Prints something then passes object along
 Text marker for long piped processes}
 \usage{
-pipeMarker(x, text)
+pipeMarker(x, text = x)
 }
 \value{
 Anything

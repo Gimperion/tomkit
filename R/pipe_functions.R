@@ -65,7 +65,7 @@ createMap <- function(x, base, name){
 #'
 #'
 #' @export
-pipeMarker <- function(x, text){
+pipeMarker <- function(x, text=x){
     cat(text, fill=TRUE)
     return(x)
 }
