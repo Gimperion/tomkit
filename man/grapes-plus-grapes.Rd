@@ -16,4 +16,3 @@ Pastes two strings together
 "foo" \%+\% "bar"
 
 }
-

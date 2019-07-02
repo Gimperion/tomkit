@@ -16,4 +16,3 @@ shortened version of prettyNum with diff defaults
 pNum(5000000)
 
 }
-

@@ -16,4 +16,3 @@ Removes leading and trailing spaces.
 trimall("  this is result   ")
 
 }
-

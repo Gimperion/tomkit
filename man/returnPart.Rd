@@ -16,4 +16,3 @@ functional way of returning specific part of data object
 returnPart(data, objectName)
 
 }
-

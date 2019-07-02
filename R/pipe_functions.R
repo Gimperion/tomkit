@@ -8,7 +8,6 @@
 #'
 #' @export
 cleanNames <- function(x){
-	require(magrittr)
 	names(x) <- names(x) %>%
 		iconv("UTF-8", "UTF-8", sub="") %>%
 		gsub(pattern="\\.", replacement=" ") %>%
@@ -68,4 +67,17 @@ createMap <- function(x, base, name){
 pipeMarker <- function(x, text=x){
     cat(text, fill=TRUE)
     return(x)
+}
+
+
+#' Calls an anonymous function if conditions are met
+#'
+#'
+#' @return Anything
+#'
+#'
+#' @export
+exec_if <- function(x, cond, .f){
+	require(purrr)
+	if(cond) exec(as_mapper(.f), x, environment()) else x
 }

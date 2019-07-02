@@ -14,6 +14,4 @@ Opposite of %in%
 }
 \examples{
 "test" \%notin\% c("bar", "foo")
-
 }
-

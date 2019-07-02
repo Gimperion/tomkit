@@ -14,4 +14,3 @@ Anything
 Prints something then passes object along
 Text marker for long piped processes
 }
-

@@ -1,11 +1,9 @@
-
 #' Opposite of %in%
 #'
 #' @return Boolean
 #'
 #' @examples
 #' "test" %notin% c("bar", "foo")
-#'
 #' @export
 `%notin%` <- function(x,y) !(x %in% y)
 
@@ -26,14 +24,14 @@
 #' @return None
 #'
 #' @examples
-#' ... some code
+#' ... # some code
 #' readkey()
 #'
 #' @export
 readkey <- function()
 {
-    cat ("Press [enter] to continue", fill=TRUE)
-    line <- readline()
+	cat ("Press [enter] to continue", fill=TRUE)
+	line <- readline()
 }
 
 #' String function that adds leading zeroes to digits.

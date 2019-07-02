@@ -1,11 +1,14 @@
 Package: tomkit
 Title: Helper functions
-Version: 0.0.1.0000
+Version: 0.0.5.0000
 Authors@R: person("Tommy", "Shen", email = "gimperion@gmail.com", role = c("aut", "cre"))
 Description: Stuff
 Depends:
     R (>= 3.2.4)
+Imports:
+    dplyr,
+    purrr
 License: CC BY
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 5.0.1
+RoxygenNote: 6.1.1

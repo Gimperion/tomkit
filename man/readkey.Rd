@@ -13,8 +13,7 @@ None
 Adds interactive pause to code.  Waits for user input.
 }
 \examples{
-... some code
+... # some code
 readkey()
 
 }
-

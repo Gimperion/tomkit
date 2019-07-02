@@ -18,4 +18,3 @@ supports piping
 c("a","b", "x", "x", "a") \%>\% ifel_repl(. == "x", "replaced!")
 
 }
-

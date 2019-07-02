@@ -2,8 +2,10 @@
 
 export("%+%")
 export("%notin%")
+export(blankPlot)
 export(cleanNames)
 export(createMap)
+export(exec_if)
 export(ifel_repl)
 export(leadgr)
 export(pNum)

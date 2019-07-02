@@ -16,4 +16,3 @@ Cleans up names of imported data frames
 cleanNames(data)
 
 }
-

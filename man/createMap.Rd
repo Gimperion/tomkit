@@ -14,4 +14,3 @@ Vector
 Creates a mapping vector based on data.frame columns
 supports piping a la dplyr
 }
-
