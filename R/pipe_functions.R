@@ -70,14 +70,22 @@ pipeMarker <- function(x, text=x){
 }
 
 
-#' Calls an anonymous function if conditions are met
+#' Execute If
 #'
-#'
-#' @return Anything
-#'
-#'
+#' This function executes a function upon an object if condition are met.
 #' @export
+#'
+#' @examples
+#' x %>%
+#' 	exec_if(TRUE, ~mutate(.x, foo="bar"))
+#'
+#'
+
 exec_if <- function(x, cond, .f){
 	require(purrr)
-	if(cond) exec(as_mapper(.f), x, environment()) else x
+	if(cond){
+		exec(as_mapper(.f), x, environment())
+	} else{
+		return(x)
+	}
 }

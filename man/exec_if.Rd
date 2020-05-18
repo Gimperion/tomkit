@@ -2,13 +2,16 @@
 % Please edit documentation in R/pipe_functions.R
 \name{exec_if}
 \alias{exec_if}
-\title{Calls an anonymous function if conditions are met}
+\title{Execute If}
 \usage{
 exec_if(x, cond, .f)
 }
-\value{
-Anything
-}
 \description{
-Calls an anonymous function if conditions are met
+This function executes a function upon an object if condition are met.
+}
+\examples{
+x \%>\%
+	exec_if(TRUE, ~mutate(.x, foo="bar"))
+
+
 }
